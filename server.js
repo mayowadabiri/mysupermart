@@ -3,12 +3,17 @@ const express = require("express"),
   cors = require("cors"),
   logger = require("morgan"),
   mongoose = require("mongoose"),
-  helmet = require("helmet");
+  helmet = require("helmet"),
+  open = require("open"),
+  swaggerUI = require("swagger-ui-express");
+openAPIDocumentation = require("./LaunchBridge.postman_collection.json");
 
 const { SERVER_CONFIG, SERVER_ENDPOINT } = require("./lib");
 
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
+const productRoutes = require("./routes/product");
+const productCategoryRoutes = require("./routes/product_category");
 
 const app = express();
 
@@ -23,9 +28,12 @@ app.get("/", (req, res) => {
   res.send("Server running on localhost:4000");
 });
 
-// User Route
+//Routes
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(openAPIDocumentation));
 app.use("/api/v1", authRoutes);
 app.use("/api/v1", userRoutes);
+app.use("/api/v1", productRoutes);
+app.use("/api/v1", productCategoryRoutes);
 
 // Error Handling
 app.use((error, req, res, next) => {
@@ -53,6 +61,10 @@ mongoose
   )
   .then((_) => {
     console.log("Connected to mongogodb");
+
+    open(`http://localhost:${SERVER_CONFIG.port}/api-docs`, {
+      app: { name: open.apps.chrome },
+    });
     app.listen(SERVER_CONFIG.port, () => {
       console.log(`Server listening on ${SERVER_ENDPOINT}`);
     });

@@ -24,7 +24,6 @@ exports.register =async  (req, res, next) => {
         password: hashedPassword,
         role,
       });
-
       await newUser.save();
       return res.status(200).json({
         message: "User saved successfully",

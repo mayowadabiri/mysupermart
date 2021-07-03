@@ -12,3 +12,15 @@ exports.getEmployees = async (req, res, next) => {
     next(error);
   }
 };
+exports.getClients = async (req, res, next) => {
+  try {
+    const user = await User.find({ role: "Client" });
+
+    return res.status(200).json({
+      message: "Fetched Successfuly",
+      user,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
