@@ -1,4 +1,6 @@
+
 {
+	"swagger":"2.0",
 	"info": {
 		"_postman_id": "38807fd8-de60-4d6d-ab5e-1f5f8fef7e5f",
 		"name": "LaunchBridge",
@@ -15,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"devdabiri@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\"\r\n}",
+							"raw": "{\r\n    \"email\": \"mayowad43@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,11 +25,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseurl}}/login",
+							"raw": "{{baseurl}}/auth/login",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
+								"auth",
 								"login"
 							]
 						}
@@ -142,14 +145,23 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullName\": \"Dabiri Mayowa\",\r\n    \"email\": \"devdabiri@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\",\r\n    \"role\":\"Employee\"\r\n}",
+							"raw": "{\r\n    \"fullName\": \"Dabiri Mayowa\",\r\n    \"email\": \"victoriataiwo1998@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\",\r\n    \"role\":\"Client\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": null
+						"url": {
+							"raw": "{{baseurl}}/auth/register",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
 					},
 					"response": [
 						{
@@ -264,7 +276,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "{{baseurl}}/user/get/employees",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user",
+								"get",
+								"employees"
+							]
+						}
 					},
 					"response": [
 						{
@@ -360,6 +382,128 @@
 							"body": "{\n    \"message\": \"Authorization header is required\",\n    \"code\": 400\n}"
 						}
 					]
+				},
+				{
+					"name": "Get Clients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZGYzMDZkNDhiNDljMmI0NGVlODgxMSIsInJvbGUiOiJTdXBlcnZpc29yIiwiZW1haWwiOiJtYXlvd2FkNDNAZ21haWwuY29tIiwiaWF0IjoxNjI1MzQ2MjU2LCJleHAiOjE2MjUzNTM0NTZ9.F0_uyZpE_4rfsnRY2_in0kj-4SpNbnS_N-4EEwXh_iY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/user/get/clients",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"user",
+								"get",
+								"clients"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Clients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/get/clients",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"get",
+										"clients"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-LMy2Qkfr+HQqhqO8WccoJuTFeKU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jul 2021 21:04:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Fetched Successfuly\",\n    \"user\": []\n}"
+						}
+					]
 				}
 			]
 		},
@@ -391,11 +535,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseurl}}/add/product",
+							"raw": "{{baseurl}}/product/add/product",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
+								"product",
 								"add",
 								"product"
 							]
@@ -511,17 +656,112 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseurl}}/get/products",
+							"raw": "{{baseurl}}/product/get/products",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
+								"product",
 								"get",
 								"products"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}/product/get/products",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"product",
+										"get",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"187-JPVlvW3X/Fb4NHYzzq/T+113g58\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jul 2021 21:09:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Fetched Successfully\",\n    \"products\": [\n        {\n            \"_id\": \"60e05469bee4c91ae4861351\",\n            \"name\": \"Acer\",\n            \"amount\": \"1200\",\n            \"category\": {\n                \"_id\": \"60e053e1bee4c91ae486134f\",\n                \"products\": [\n                    \"60e05469bee4c91ae4861351\"\n                ],\n                \"category\": \"Desktop\",\n                \"createdAt\": \"2021-07-03T12:11:13.900Z\",\n                \"updatedAt\": \"2021-07-03T12:13:29.869Z\",\n                \"__v\": 1\n            },\n            \"createdAt\": \"2021-07-03T12:13:30.274Z\",\n            \"updatedAt\": \"2021-07-03T12:13:30.274Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
@@ -553,11 +793,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseurl}}/add/category",
+							"raw": "{{baseurl}}/product-category/add/category",
 							"host": [
 								"{{baseurl}}"
 							],
 							"path": [
+								"product-category",
 								"add",
 								"category"
 							]

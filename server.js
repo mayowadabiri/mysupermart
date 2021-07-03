@@ -5,7 +5,7 @@ const express = require("express"),
   mongoose = require("mongoose"),
   helmet = require("helmet"),
   open = require("open"),
-  swaggerUI = require("swagger-ui-express");
+  swaggerUi = require("swagger-ui-express");
 openAPIDocumentation = require("./LaunchBridge.postman_collection.json");
 
 const { SERVER_CONFIG, SERVER_ENDPOINT } = require("./lib");
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 //Routes
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(openAPIDocumentation));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openAPIDocumentation));
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/product", productRoutes);
