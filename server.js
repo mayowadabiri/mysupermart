@@ -30,10 +30,10 @@ app.get("/", (req, res) => {
 
 //Routes
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(openAPIDocumentation));
-app.use("/api/v1", authRoutes);
-app.use("/api/v1", userRoutes);
-app.use("/api/v1", productRoutes);
-app.use("/api/v1", productCategoryRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/product", productRoutes);
+app.use("/api/v1/product-category", productCategoryRoutes);
 
 // Error Handling
 app.use((error, req, res, next) => {
@@ -60,13 +60,12 @@ mongoose
     }
   )
   .then((_) => {
-    console.log("Connected to mongogodb");
-
     open(`http://localhost:${SERVER_CONFIG.port}/api-docs`, {
       app: { name: open.apps.chrome },
     });
     app.listen(SERVER_CONFIG.port, () => {
       console.log(`Server listening on ${SERVER_ENDPOINT}`);
+      console.log("Connected to mongogodb");
     });
   })
   .catch((error) => {
