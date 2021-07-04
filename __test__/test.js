@@ -1,7 +1,6 @@
 const request = require("supertest");
 const express = require("express");
 
-
 jest.setTimeout(100000);
 const app = express();
 app.use(express.urlencoded());
@@ -29,7 +28,4 @@ describe("Get users", () => {
         code: 400,
       });
   });
-
-
-  
 });

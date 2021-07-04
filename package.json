@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "jest --runInBand "
+    "start": "node server.js",
+    "test": "jest --runInBand ",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
