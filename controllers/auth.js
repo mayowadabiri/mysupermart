@@ -28,6 +28,7 @@ exports.register =async  (req, res, next) => {
       return res.status(200).json({
         message: "User saved successfully",
         role: newUser.role,
+        email: newUser.email
       });
     } else {
       throw errors("Missing Parameters", 400);

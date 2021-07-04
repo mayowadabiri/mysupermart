@@ -14,6 +14,7 @@ const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product");
 const productCategoryRoutes = require("./routes/product_category");
+const broadcast = require("./routes/broadcast");
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/product-category", productCategoryRoutes);
+app.use("/api/v1", broadcast);
 
 // Error Handling
 app.use((error, req, res, next) => {
@@ -60,9 +62,9 @@ mongoose
     }
   )
   .then((_) => {
-    open(`http://localhost:${SERVER_CONFIG.port}/api-docs`, {
-      app: { name: open.apps.chrome },
-    });
+    // open(`http://localhost:${SERVER_CONFIG.port}/api-docs`, {
+    //   app: { name: open.apps.chrome },
+    // });
     app.listen(SERVER_CONFIG.port, () => {
       console.log(`Server listening on ${SERVER_ENDPOINT}`);
       console.log("Connected to mongogodb");
