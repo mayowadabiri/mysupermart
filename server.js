@@ -6,7 +6,7 @@ const express = require("express"),
   helmet = require("helmet"),
   open = require("open"),
   swaggerUi = require("swagger-ui-express");
-openAPIDocumentation = require("./LaunchBridge.postman_collection.json");
+openAPIDocumentation = require("./MySuperMart.postman_collection.json");
 
 const { SERVER_CONFIG, SERVER_ENDPOINT } = require("./lib");
 

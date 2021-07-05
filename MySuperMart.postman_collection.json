@@ -1,143 +1,13 @@
-
 {
-	"swagger":"2.0",
 	"info": {
 		"_postman_id": "38807fd8-de60-4d6d-ab5e-1f5f8fef7e5f",
-		"name": "LaunchBridge",
+		"name": "MySuperMart",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Auth",
 			"item": [
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"mayowad43@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseurl}}/auth/login",
-							"host": [
-								"{{baseurl}}"
-							],
-							"path": [
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Login",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"maywowad43@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseurl}}/login",
-									"host": [
-										"{{baseurl}}"
-									],
-									"path": [
-										"login"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-Permitted-Cross-Domain-Policies",
-									"value": "none"
-								},
-								{
-									"key": "Referrer-Policy",
-									"value": "no-referrer"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "314"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"13a-wzileuHF/xYMg5t8XbHOWPhY8TM\""
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 03 Jul 2021 11:51:20 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"message\": \"Logged In Successfully\",\n    \"id\": \"60e0026ee8189c69847d5625\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTAwMjZlZTgxODljNjk4NDdkNTYyNSIsInJvbGUiOiJFbXBsb3llZSIsImVtYWlsIjoiZGV2ZGFiaXJpQGdtYWlsLmNvbSIsImlhdCI6MTYyNTMxMzA4MCwiZXhwIjoxNjI1MzIwMjgwfQ.fwQ-watXNkBXzdEzYF8jblda5LHUacMbXaSOzHB-pNI\"\n}"
-						}
-					]
-				},
 				{
 					"name": "Register",
 					"request": {
@@ -263,6 +133,134 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"User already exists\",\n    \"code\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mayowad43@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/auth/login",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"maywowad43@gmail.com\",\r\n    \"password\": \"Dev.Dabiri1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseurl}}/login",
+									"host": [
+										"{{baseurl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13a-wzileuHF/xYMg5t8XbHOWPhY8TM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Jul 2021 11:51:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged In Successfully\",\n    \"id\": \"60e0026ee8189c69847d5625\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTAwMjZlZTgxODljNjk4NDdkNTYyNSIsInJvbGUiOiJFbXBsb3llZSIsImVtYWlsIjoiZGV2ZGFiaXJpQGdtYWlsLmNvbSIsImlhdCI6MTYyNTMxMzA4MCwiZXhwIjoxNjI1MzIwMjgwfQ.fwQ-watXNkBXzdEzYF8jblda5LHUacMbXaSOzHB-pNI\"\n}"
 						}
 					]
 				}
@@ -907,6 +905,20 @@
 							"body": "{\n    \"message\": \"Success\",\n    \"newCategory\": {\n        \"products\": [],\n        \"_id\": \"60e053e1bee4c91ae486134f\",\n        \"category\": \"Desktop\",\n        \"createdAt\": \"2021-07-03T12:11:13.900Z\",\n        \"updatedAt\": \"2021-07-03T12:11:13.900Z\",\n        \"__v\": 0\n    }\n}"
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Broadcast",
+			"item": [
+				{
+					"name": "Broadcast",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": []
 				}
 			]
 		}

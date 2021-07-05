@@ -15,7 +15,7 @@ exports.broadcast = async (req, res, next) => {
         text: msg,
       };
 
-      await sendMail(config);
+      await sendMail(msg, subject, user.email);
     }
     return res.status(200).json({
       message: "Broadcast sent successfully",
