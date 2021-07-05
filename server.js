@@ -26,7 +26,7 @@ app.use(helmet());
 app.use(logger("dev"));
 
 app.get("/", (req, res) => {
-  res.send("Server running on localhost:4000");
+  res.send(`Server listening on ${SERVER_ENDPOINT}:${SERVER_CONFIG.port}`);
 });
 
 //Routes
