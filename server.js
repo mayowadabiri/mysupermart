@@ -26,7 +26,7 @@ app.use(helmet());
 app.use(logger("dev"));
 
 app.get("/", (req, res) => {
-  res.send(`Server listening on ${SERVER_ENDPOINT}:${SERVER_CONFIG.port}`);
+  res.send(`Server listening on ${SERVER_ENDPOINT}`);
 });
 
 //Routes
