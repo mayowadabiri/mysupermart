@@ -67,7 +67,7 @@ mongoose
     // });
     app.listen(SERVER_CONFIG.port, () => {
       console.log(`Server listening on ${SERVER_ENDPOINT}`);
-      console.log("Connected to mongogodb");
+      console.log("Connected to mongodb");
     });
   })
   .catch((error) => {
